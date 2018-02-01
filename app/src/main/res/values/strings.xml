@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MemorizeWords</string>
+
+    <!-- input screen -->
+    <string name="text_translation_1">Translation 1</string>
+    <string name="text_translation_2">Translation 2</string>
+    <string name="button_save">Save</string>
+    <string name="button_delete">Remove</string>
 </resources>
