@@ -30,12 +30,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Translation 2"
-        app:layout_constraintBottom_toBottomOf="@+id/inputtex2t"
+        app:layout_constraintBottom_toBottomOf="@+id/inputtext2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inputtex2t" />
+        app:layout_constraintTop_toTopOf="@+id/inputtext2" />
 
     <EditText
-        android:id="@+id/inputtex2t"
+        android:id="@+id/inputtext2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/inputtext1" />
 
     <Button
+        android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="save"
