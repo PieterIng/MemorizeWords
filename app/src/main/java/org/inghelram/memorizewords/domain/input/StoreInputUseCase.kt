@@ -6,11 +6,10 @@ import be.sigmadelta.substratum.usecase.AbstractUseCase
 /**
  * Created by pieter on 01/02/18.
  */
-class StoreInputUseCase(executor: Executor) : AbstractUseCase(executor) {
-
+class StoreInputUseCase(executor: Executor, val callback: IInputUseCase, val repository: IInputRepository, val translation1: String, val translation2: String) : AbstractUseCase(executor) {
 
     override fun run() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+       repository.storeInput(translation1, translation2, callback)
     }
 
 }

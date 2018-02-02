@@ -11,16 +11,25 @@ import android.content.Context
  */
 @Database(entities = arrayOf(Translation::class), version = 1)
 abstract class TranslationsDatabase : RoomDatabase() {
-    public abstract fun translationDao(): TranslationDao
+    abstract fun translationDao(): TranslationDao
 
     //todo: as Google says: use singleton pattern as each RoomDatabase instance is fairly expensive
     companion object {
-        private lateinit var INSTANCE: TranslationsDatabase
+        private var INSTANCE: TranslationsDatabase? = null
 
-        fun getInstance(context: Context): TranslationsDatabase {
-            INSTANCE = Room.databaseBuilder(context.applicationContext,
-                    TranslationsDatabase::class.java, "translations.db").build();
+        fun getInstance(context: Context): TranslationsDatabase? {
+            //todo make sure it doesn't return null
+            if (INSTANCE == null) {
+                synchronized(TranslationsDatabase::class) {
+                    INSTANCE = Room.databaseBuilder(context.applicationContext,
+                            TranslationsDatabase::class.java, "translations.db").build()
+                }
+            }
             return INSTANCE
+        }
+
+        fun destroyInstance() {
+            INSTANCE = null
         }
 
     }

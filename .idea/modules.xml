@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MemorizeWords.iml" filepath="$PROJECT_DIR$/MemorizeWords.iml" />
+      <module fileurl="file://C:\_develop_android\AndroidProjects\PriceCollect\MemorizeWords\MemorizeWords.iml" filepath="C:\_develop_android\AndroidProjects\PriceCollect\MemorizeWords\MemorizeWords.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\_develop_android\AndroidProjects\PriceCollect\MemorizeWords\app\app.iml" filepath="C:\_develop_android\AndroidProjects\PriceCollect\MemorizeWords\app\app.iml" />
     </modules>
   </component>
 </project>
