@@ -13,5 +13,6 @@ class StoreTranslationsRepository(context: Context) : IInputRepository {
     override fun storeInput(translation1: String, translation2: String, callback: IInputUseCase) {
         val translation = Translation(translation1 = translation1, translation2 = translation2)
         database.translationDao().insertTranslation(translation)
+        callback.onTaskComplete()
     }
 }

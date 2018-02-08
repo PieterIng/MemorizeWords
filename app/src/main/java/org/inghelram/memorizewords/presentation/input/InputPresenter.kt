@@ -19,7 +19,7 @@ class InputPresenter(executor: Executor, mainThread: IMainThread, useCaseFactory
     }
 
     override fun onTaskComplete() {
-        iInputView.showValueStored()
+        mainThread.post(Runnable { iInputView.showValueStored() })
     }
 
 }
