@@ -6,4 +6,5 @@
     <string name="text_translation_2">Translation 2</string>
     <string name="button_save">Save</string>
     <string name="button_delete">Remove</string>
+    <string name="button_next">Next</string>
 </resources>
