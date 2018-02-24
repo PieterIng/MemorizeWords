@@ -18,8 +18,8 @@ class InputPresenter(executor: Executor, mainThread: IMainThread, useCaseFactory
         useCase.execute()
     }
 
-    override fun onTaskComplete() {
-        mainThread.post(Runnable { iInputView.showValueStored() })
+    override fun onTaskComplete(numberOfEntries: Int) {
+        mainThread.post(Runnable { iInputView.showValueStored(numberOfEntries) })
     }
 
 }

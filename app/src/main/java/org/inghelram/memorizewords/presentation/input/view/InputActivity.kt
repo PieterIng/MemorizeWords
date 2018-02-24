@@ -38,8 +38,8 @@ class InputActivity : AppCompatActivity(), IInputView {
         removeButton.setOnClickListener { Toast.makeText(this, "delete", Toast.LENGTH_SHORT).show() }
     }
 
-    override fun showValueStored() {
-        Toast.makeText(this, "value stored", Toast.LENGTH_SHORT).show()
+    override fun showValueStored(numberOfEntries: Int) {
+        Toast.makeText(this, "value stored: " + numberOfEntries, Toast.LENGTH_SHORT).show()
         inputText1.setText("bla")
     }
 }
