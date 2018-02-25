@@ -8,6 +8,7 @@ import android.widget.Toast
 import be.sigmadelta.substratum.threading.MainThread
 import be.sigmadelta.substratum.threading.ThreadExecutor
 import be.sigmadelta.substratum.usecase.UseCaseFactory
+import kotlinx.android.synthetic.main.activity_input.*
 import org.inghelram.memorizewords.R
 import org.inghelram.memorizewords.data.database.StoreTranslationsRepository
 import org.inghelram.memorizewords.domain.input.IInputPresenter
@@ -32,14 +33,14 @@ class InputActivity : AppCompatActivity(), IInputView {
         inputText1 = findViewById(R.id.inputtext1)
         val inputText2 = findViewById<EditText>(R.id.inputtext2)
         val saveButton = findViewById<Button>(R.id.button_save)
-        val removeButton = findViewById<Button>(R.id.button_delete)
 
         saveButton.setOnClickListener { inputView.storeInput(inputText1.text.toString(), inputText2.text.toString()) }
-        removeButton.setOnClickListener { Toast.makeText(this, "delete", Toast.LENGTH_SHORT).show() }
     }
 
     override fun showValueStored(numberOfEntries: Int) {
         Toast.makeText(this, "value stored: " + numberOfEntries, Toast.LENGTH_SHORT).show()
-        inputText1.setText("bla")
+        inputText1.setText("")
+        inputText1.requestFocus()
+        inputtext2.setText("")
     }
 }

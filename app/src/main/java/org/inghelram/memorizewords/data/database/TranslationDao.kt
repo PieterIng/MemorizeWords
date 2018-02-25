@@ -10,8 +10,8 @@ interface TranslationDao {
     @Query("select * from Translation")
     fun getAllTranslations(): List<Translation>
 
-    @Query("select * from Translation where id = (:translationId)")
-    fun findTranslationById(translationId: Long): Translation
+    @Query("select * from Translation ORDER BY RANDOM() LIMIT 1")
+    fun findRandomTranslation(): Translation
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertTranslation(translation: Translation)
