@@ -2,6 +2,7 @@ package org.inghelram.memorizewords.presentation.input.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -27,6 +28,9 @@ class InputActivity : AppCompatActivity(), IInputView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
         repository = StoreTranslationsRepository(this)
         inputView = InputPresenter(ThreadExecutor.INSTANCE, MainThread.INSTANCE, UseCaseFactory(), repository, this)
 
@@ -35,6 +39,11 @@ class InputActivity : AppCompatActivity(), IInputView {
         val saveButton = findViewById<Button>(R.id.button_save)
 
         saveButton.setOnClickListener { inputView.storeInput(inputText1.text.toString(), inputText2.text.toString()) }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        finish()
+        return true
     }
 
     override fun showValueStored(numberOfEntries: Int) {
